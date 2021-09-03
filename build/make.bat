@@ -1,0 +1,1 @@
+devenv pro.sln /build Release /project all_build
