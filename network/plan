@@ -1,0 +1,28 @@
+1.ssl
+
+t' = encode(t)
+t = decode(t')
+
+
+2.socket:
+
+c:
+
+setserver(address)
+deliver(t):
+	t' = encode(t)
+	send(t')
+	recive(ack')
+	ack = decode(ack')
+	print(success/fail)
+
+search(name, password)
+	t' = encode(name+password)
+	send(t')
+	receive(t2')
+	t2 = decode(t2')
+	print(success/fail)
+	return t2
+
+send()
+receive(): time out
