@@ -1,0 +1,3 @@
+/Users/usr/src/4上/se/znfs/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/usr/src/4上/se/znfs/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/usr/src/4上/se/znfs/cmake-build-debug/CMakeFiles/znfs.dir

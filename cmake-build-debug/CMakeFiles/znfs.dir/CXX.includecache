@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/usr/src/4上/se/znfs/cp/copy_tool.cc
+copy_tool.h
+/Users/usr/src/4上/se/znfs/cp/copy_tool.h
+
+/Users/usr/src/4上/se/znfs/cp/copy_tool.h
+iostream
+-
+unistd.h
+-
+fcntl.h
+-
+
