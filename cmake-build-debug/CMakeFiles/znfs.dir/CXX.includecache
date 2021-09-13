@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/usr/src/4上/se/znfs/cp/copy_tool.cc
-copy_tool.h
-/Users/usr/src/4上/se/znfs/cp/copy_tool.h
-
 /Users/usr/src/4上/se/znfs/cp/copy_tool.h
 iostream
 -
@@ -17,4 +13,20 @@ unistd.h
 -
 fcntl.h
 -
+sys/types.h
+-
+sys/stat.h
+-
+utime.h
+-
+string
+-
+
+/Users/usr/src/4上/se/znfs/main.cpp
+iostream
+-
+string
+-
+./cp/copy_tool.h
+/Users/usr/src/4上/se/znfs/cp/copy_tool.h
 
