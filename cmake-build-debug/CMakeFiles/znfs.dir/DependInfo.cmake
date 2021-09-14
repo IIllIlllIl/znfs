@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/usr/src/4上/se/znfs/cp/copy_tool.cc" "/Users/usr/src/4上/se/znfs/cmake-build-debug/CMakeFiles/znfs.dir/cp/copy_tool.cc.o"
+  "/Users/usr/src/4上/se/znfs/cp/dir_node.cc" "/Users/usr/src/4上/se/znfs/cmake-build-debug/CMakeFiles/znfs.dir/cp/dir_node.cc.o"
   "/Users/usr/src/4上/se/znfs/main.cpp" "/Users/usr/src/4上/se/znfs/cmake-build-debug/CMakeFiles/znfs.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

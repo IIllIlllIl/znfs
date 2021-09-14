@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/usr/src/4上/se/znfs/cp/copy_tool.cc
+copy_tool.h
+/Users/usr/src/4上/se/znfs/cp/copy_tool.h
+
 /Users/usr/src/4上/se/znfs/cp/copy_tool.h
 iostream
 -
@@ -22,6 +26,14 @@ utime.h
 string
 -
 
+/Users/usr/src/4上/se/znfs/cp/dir_node.h
+copy_tool.h
+/Users/usr/src/4上/se/znfs/cp/copy_tool.h
+dirent.h
+-
+vector
+-
+
 /Users/usr/src/4上/se/znfs/main.cpp
 iostream
 -
@@ -29,4 +41,6 @@ string
 -
 ./cp/copy_tool.h
 /Users/usr/src/4上/se/znfs/cp/copy_tool.h
+./cp/dir_node.h
+/Users/usr/src/4上/se/znfs/cp/dir_node.h
 

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/znfs.dir/cp/copy_tool.cc.o"
+  "CMakeFiles/znfs.dir/cp/dir_node.cc.o"
   "CMakeFiles/znfs.dir/main.cpp.o"
   "znfs"
   "znfs.pdb"

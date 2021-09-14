@@ -4,6 +4,11 @@
 CMakeFiles/znfs.dir/cp/copy_tool.cc.o: ../cp/copy_tool.cc
 CMakeFiles/znfs.dir/cp/copy_tool.cc.o: ../cp/copy_tool.h
 
+CMakeFiles/znfs.dir/cp/dir_node.cc.o: ../cp/copy_tool.h
+CMakeFiles/znfs.dir/cp/dir_node.cc.o: ../cp/dir_node.cc
+CMakeFiles/znfs.dir/cp/dir_node.cc.o: ../cp/dir_node.h
+
 CMakeFiles/znfs.dir/main.cpp.o: ../cp/copy_tool.h
+CMakeFiles/znfs.dir/main.cpp.o: ../cp/dir_node.h
 CMakeFiles/znfs.dir/main.cpp.o: ../main.cpp
 

@@ -20,12 +20,13 @@
 #include <string>
 
 class copy_tool {
+public:
+    struct stat stat_buf_input;
 private:
     int file_input, file_output, stat_input;
     std::string path_input, path_output;
     const int buffer_size = 4096;  // 4KB
     unsigned char buffer[4096];
-    struct stat stat_buf_input;
 
 public:
     copy_tool(const char * open_path, const char * create_path);
@@ -38,7 +39,6 @@ public:
     // if success, return 0.
     int copy();
 
-private:
     // checks and returns for stat_copy().
     // if fails to read the stat of the file, return -1;
     // if the stat is unable to process, return -2;

@@ -125,6 +125,11 @@ int copy_tool::copy() {
             return 132;
         }
 
+        int write_stat_flag = write_stat();
+        if (write_stat_flag < 0) {
+            return  230;
+        }
+
         return 0;
     }
 
@@ -134,6 +139,11 @@ int copy_tool::copy() {
         if (fifo_flag == -1) {
             // make fifo error
             return 150;
+        }
+
+        int write_stat_flag = write_stat();
+        if (write_stat_flag < 0) {
+            return  250;
         }
 
         return 0;
