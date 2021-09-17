@@ -1,0 +1,3 @@
+/home/se/Documents/znfs/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/se/Documents/znfs/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/se/Documents/znfs/cmake-build-debug/CMakeFiles/znfs.dir
