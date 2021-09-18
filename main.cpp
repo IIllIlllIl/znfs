@@ -62,7 +62,7 @@ int main() {
     const char ** files = (const char **) &src_dir;
 
     int rc = 0;
-    int flag = 0;
+    int flag = 1;
 
     if (flag == 0){
         rc = toTar(filename, files);

@@ -153,29 +153,29 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-tar.o: tar.cpp.o
-.PHONY : tar.o
+pack/tar.o: pack/tar.cpp.o
+.PHONY : pack/tar.o
 
 # target to build an object file
-tar.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/tar.cpp.o
-.PHONY : tar.cpp.o
+pack/tar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/pack/tar.cpp.o
+.PHONY : pack/tar.cpp.o
 
-tar.i: tar.cpp.i
-.PHONY : tar.i
+pack/tar.i: pack/tar.cpp.i
+.PHONY : pack/tar.i
 
 # target to preprocess a source file
-tar.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/tar.cpp.i
-.PHONY : tar.cpp.i
+pack/tar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/pack/tar.cpp.i
+.PHONY : pack/tar.cpp.i
 
-tar.s: tar.cpp.s
-.PHONY : tar.s
+pack/tar.s: pack/tar.cpp.s
+.PHONY : pack/tar.s
 
 # target to generate assembly for a file
-tar.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/tar.cpp.s
-.PHONY : tar.cpp.s
+pack/tar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/pack/tar.cpp.s
+.PHONY : pack/tar.cpp.s
 
 # Help Target
 help:
@@ -189,9 +189,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... tar.o"
-	@echo "... tar.i"
-	@echo "... tar.s"
+	@echo "... pack/tar.o"
+	@echo "... pack/tar.i"
+	@echo "... pack/tar.s"
 .PHONY : help
 
 

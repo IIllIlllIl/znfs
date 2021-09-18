@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/znfs.dir/main.cpp.o"
-  "CMakeFiles/znfs.dir/tar.cpp.o"
+  "CMakeFiles/znfs.dir/pack/tar.cpp.o"
   "znfs"
   "znfs.pdb"
 )

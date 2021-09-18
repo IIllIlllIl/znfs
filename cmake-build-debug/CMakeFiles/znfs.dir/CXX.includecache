@@ -6,21 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/se/Documents/znfs/compress.h
+/home/se/Documents/znfs/compress/compress.h
 huffmanTree.h
-/home/se/Documents/znfs/huffmanTree.h
+/home/se/Documents/znfs/compress/huffmanTree.h
 fstream
 -
 
-/home/se/Documents/znfs/decompress.h
+/home/se/Documents/znfs/compress/decompress.h
 huffmanTree.h
-/home/se/Documents/znfs/huffmanTree.h
+/home/se/Documents/znfs/compress/huffmanTree.h
 compress.h
-/home/se/Documents/znfs/compress.h
+/home/se/Documents/znfs/compress/compress.h
 fstream
-/home/se/Documents/znfs/fstream
+/home/se/Documents/znfs/compress/fstream
 
-/home/se/Documents/znfs/huffmanTree.h
+/home/se/Documents/znfs/compress/huffmanTree.h
 cstdio
 -
 cstdlib
@@ -39,14 +39,14 @@ iostream
 -
 string
 -
-tar.h
-/home/se/Documents/znfs/tar.h
-compress.h
-/home/se/Documents/znfs/compress.h
-decompress.h
-/home/se/Documents/znfs/decompress.h
+pack/tar.h
+/home/se/Documents/znfs/pack/tar.h
+compress/compress.h
+/home/se/Documents/znfs/compress/compress.h
+compress/decompress.h
+/home/se/Documents/znfs/compress/decompress.h
 
-/home/se/Documents/znfs/tar.h
+/home/se/Documents/znfs/pack/tar.h
 errno.h
 -
 stdarg.h

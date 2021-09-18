@@ -3,4 +3,4 @@ project(znfs)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(znfs main.cpp tar.cpp tar.h compress.h decompress.h huffmanTree.h)
+add_executable(znfs main.cpp pack/tar.cpp pack/tar.h compress/compress.h compress/decompress.h compress/huffmanTree.h)

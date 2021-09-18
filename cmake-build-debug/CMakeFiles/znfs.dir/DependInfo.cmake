@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/se/Documents/znfs/main.cpp" "/home/se/Documents/znfs/cmake-build-debug/CMakeFiles/znfs.dir/main.cpp.o"
-  "/home/se/Documents/znfs/tar.cpp" "/home/se/Documents/znfs/cmake-build-debug/CMakeFiles/znfs.dir/tar.cpp.o"
+  "/home/se/Documents/znfs/pack/tar.cpp" "/home/se/Documents/znfs/cmake-build-debug/CMakeFiles/znfs.dir/pack/tar.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

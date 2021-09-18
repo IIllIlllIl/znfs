@@ -79,29 +79,29 @@ CMakeFiles/znfs.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/znfs.dir/main.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/se/Documents/znfs/main.cpp -o CMakeFiles/znfs.dir/main.cpp.s
 
-CMakeFiles/znfs.dir/tar.cpp.o: CMakeFiles/znfs.dir/flags.make
-CMakeFiles/znfs.dir/tar.cpp.o: ../tar.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/se/Documents/znfs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/znfs.dir/tar.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/znfs.dir/tar.cpp.o -c /home/se/Documents/znfs/tar.cpp
+CMakeFiles/znfs.dir/pack/tar.cpp.o: CMakeFiles/znfs.dir/flags.make
+CMakeFiles/znfs.dir/pack/tar.cpp.o: ../pack/tar.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/se/Documents/znfs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/znfs.dir/pack/tar.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/znfs.dir/pack/tar.cpp.o -c /home/se/Documents/znfs/pack/tar.cpp
 
-CMakeFiles/znfs.dir/tar.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/znfs.dir/tar.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/se/Documents/znfs/tar.cpp > CMakeFiles/znfs.dir/tar.cpp.i
+CMakeFiles/znfs.dir/pack/tar.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/znfs.dir/pack/tar.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/se/Documents/znfs/pack/tar.cpp > CMakeFiles/znfs.dir/pack/tar.cpp.i
 
-CMakeFiles/znfs.dir/tar.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/znfs.dir/tar.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/se/Documents/znfs/tar.cpp -o CMakeFiles/znfs.dir/tar.cpp.s
+CMakeFiles/znfs.dir/pack/tar.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/znfs.dir/pack/tar.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/se/Documents/znfs/pack/tar.cpp -o CMakeFiles/znfs.dir/pack/tar.cpp.s
 
 # Object files for target znfs
 znfs_OBJECTS = \
 "CMakeFiles/znfs.dir/main.cpp.o" \
-"CMakeFiles/znfs.dir/tar.cpp.o"
+"CMakeFiles/znfs.dir/pack/tar.cpp.o"
 
 # External object files for target znfs
 znfs_EXTERNAL_OBJECTS =
 
 znfs: CMakeFiles/znfs.dir/main.cpp.o
-znfs: CMakeFiles/znfs.dir/tar.cpp.o
+znfs: CMakeFiles/znfs.dir/pack/tar.cpp.o
 znfs: CMakeFiles/znfs.dir/build.make
 znfs: CMakeFiles/znfs.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/se/Documents/znfs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable znfs"

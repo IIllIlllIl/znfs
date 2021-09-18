@@ -155,9 +155,10 @@ int tar_write(const int fd, struct tar_t ** archive, const size_t filecount, con
 
 void tar_free(struct tar_t * archive) {
     while (archive) {
-            struct tar_t *next = archive->next;
-            free(archive);
-            archive = next;
+        archive->next=NULL;
+        struct tar_t *next = archive->next;
+        free(archive);
+        archive = next;
     }
 }
 
@@ -995,7 +996,8 @@ int write_entries(const int fd,
                     char buf[512];
                     while ((r = read_size(f, buf, 512)) > 0){
                         if (write_size(fd, buf, r) != r){
-                            RC_ERROR("Could not write to archive: %s", strerror(rc));
+                            RC_ERROR("Could not write to "
+                                     ": %s", strerror(rc));
                         }
                     }
 

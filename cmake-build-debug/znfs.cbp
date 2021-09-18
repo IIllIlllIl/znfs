@@ -84,22 +84,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/se/Documents/znfs/compress.h">
+		<Unit filename="/home/se/Documents/znfs/compress/compress.h">
 			<Option target="znfs"/>
 		</Unit>
-		<Unit filename="/home/se/Documents/znfs/decompress.h">
+		<Unit filename="/home/se/Documents/znfs/compress/decompress.h">
 			<Option target="znfs"/>
 		</Unit>
-		<Unit filename="/home/se/Documents/znfs/huffmanTree.h">
+		<Unit filename="/home/se/Documents/znfs/compress/huffmanTree.h">
 			<Option target="znfs"/>
 		</Unit>
 		<Unit filename="/home/se/Documents/znfs/main.cpp">
 			<Option target="znfs"/>
 		</Unit>
-		<Unit filename="/home/se/Documents/znfs/tar.cpp">
+		<Unit filename="/home/se/Documents/znfs/pack/tar.cpp">
 			<Option target="znfs"/>
 		</Unit>
-		<Unit filename="/home/se/Documents/znfs/tar.h">
+		<Unit filename="/home/se/Documents/znfs/pack/tar.h">
 			<Option target="znfs"/>
 		</Unit>
 		<Unit filename="/home/se/Documents/znfs/CMakeLists.txt">
