@@ -84,6 +84,12 @@
 		<Unit filename="/Users/usr/src/4上/se/znfs/cp/copy_tool.h">
 			<Option target="znfs"/>
 		</Unit>
+		<Unit filename="/Users/usr/src/4上/se/znfs/cp/diff.cc">
+			<Option target="znfs"/>
+		</Unit>
+		<Unit filename="/Users/usr/src/4上/se/znfs/cp/diff.h">
+			<Option target="znfs"/>
+		</Unit>
 		<Unit filename="/Users/usr/src/4上/se/znfs/cp/dir_node.cc">
 			<Option target="znfs"/>
 		</Unit>

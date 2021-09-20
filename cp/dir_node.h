@@ -12,12 +12,14 @@
 #define ZNFS_DIR_NODE_H
 
 #include "copy_tool.h"
+#include "diff.h"
 #include <dirent.h>
 #include <vector>
 
 class dir_node {
 private:
     copy_tool* this_node;
+    diff* this_df;
     int type;
     std::string root_input, root_output;
     std::vector<dir_node*> children;
@@ -29,6 +31,8 @@ public:
     // other error is same with copy_tool.copy();
     // if success, return 0.
     int copy();
+
+    int diff_tree();
 
 private:
     // build the tree of chosen dir，
@@ -48,6 +52,13 @@ private:
     // if fails, return error according to copy_tool.copy();
     // if success, return 0.
     int copy_file();
+
+    // write the stat to the tree of chosen dir，
+    // if the file is not a dir, return -1;
+    // if fails to open chosen dir, return -2;
+    // if fails to write stat, return -3;
+    // id success, return 0.
+    int stat_tree();
 };
 
 

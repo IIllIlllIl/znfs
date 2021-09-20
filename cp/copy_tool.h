@@ -17,12 +17,13 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <utime.h>
+#include <ctime>
 #include <string>
 
 class copy_tool {
 public:
     struct stat stat_buf_input;
-private:
+// private:
     int file_input, file_output, stat_input;
     std::string path_input, path_output;
     const int buffer_size = 4096;  // 4KB
@@ -57,12 +58,16 @@ public:
     // if success, return 0.
     int content_copy();
 
-    // write stat into the created file,
+    // write stat into the created file by utime(),
     // if fails to modify uid and gid, return -1;
     // if fails to modify modes, return -2;
     // if fails to modify utime, return -3;
     // if success, return 0.
     int write_stat();
+
+    // write stat into the created file by utimes(),
+    // error same with write_stat();
+    int stat();
 };
 
 

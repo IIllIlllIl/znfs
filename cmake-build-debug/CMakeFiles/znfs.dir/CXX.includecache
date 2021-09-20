@@ -19,16 +19,36 @@ sys/stat.h
 -
 utime.h
 -
+ctime
+-
 string
 -
 
-/Users/usr/src/4上/se/znfs/cp/dir_node.cc
-dir_node.h
-/Users/usr/src/4上/se/znfs/cp/dir_node.h
+/Users/usr/src/4上/se/znfs/cp/diff.h
+iostream
+-
+unistd.h
+-
+fcntl.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+utime.h
+-
+ctime
+-
+string
+-
+cstring
+-
 
 /Users/usr/src/4上/se/znfs/cp/dir_node.h
 copy_tool.h
 /Users/usr/src/4上/se/znfs/cp/copy_tool.h
+diff.h
+/Users/usr/src/4上/se/znfs/cp/diff.h
 dirent.h
 -
 vector
@@ -43,4 +63,6 @@ string
 /Users/usr/src/4上/se/znfs/cp/copy_tool.h
 ./cp/dir_node.h
 /Users/usr/src/4上/se/znfs/cp/dir_node.h
+./cp/diff.h
+/Users/usr/src/4上/se/znfs/cp/diff.h
 

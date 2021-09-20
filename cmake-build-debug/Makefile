@@ -169,6 +169,33 @@ cp/copy_tool.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/cp/copy_tool.cc.s
 .PHONY : cp/copy_tool.cc.s
 
+cp/diff.o: cp/diff.cc.o
+
+.PHONY : cp/diff.o
+
+# target to build an object file
+cp/diff.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/cp/diff.cc.o
+.PHONY : cp/diff.cc.o
+
+cp/diff.i: cp/diff.cc.i
+
+.PHONY : cp/diff.i
+
+# target to preprocess a source file
+cp/diff.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/cp/diff.cc.i
+.PHONY : cp/diff.cc.i
+
+cp/diff.s: cp/diff.cc.s
+
+.PHONY : cp/diff.s
+
+# target to generate assembly for a file
+cp/diff.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/cp/diff.cc.s
+.PHONY : cp/diff.cc.s
+
 cp/dir_node.o: cp/dir_node.cc.o
 
 .PHONY : cp/dir_node.o
@@ -235,6 +262,9 @@ help:
 	@echo "... cp/copy_tool.o"
 	@echo "... cp/copy_tool.i"
 	@echo "... cp/copy_tool.s"
+	@echo "... cp/diff.o"
+	@echo "... cp/diff.i"
+	@echo "... cp/diff.s"
 	@echo "... cp/dir_node.o"
 	@echo "... cp/dir_node.i"
 	@echo "... cp/dir_node.s"

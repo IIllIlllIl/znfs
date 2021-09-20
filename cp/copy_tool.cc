@@ -2,6 +2,7 @@
 // Created by Phoenix Wang on 2021/9/11.
 //
 
+#include <sys/time.h>
 #include "copy_tool.h"
 
 copy_tool::copy_tool(const char * open_path, const char * create_path){
@@ -76,6 +77,29 @@ int copy_tool::write_stat() {
     if (utime_flag == -1) {
         return -3;
     }
+
+    return 0;
+}
+
+int copy_tool::stat() {
+//    int chown_flag = chown(path_output.c_str(),
+//                           stat_buf_input.st_uid,
+//                           stat_buf_input.st_gid);
+//    if (chown_flag == -1) {
+//        return -1;
+//    }
+//
+//    int chmod_flag = chmod(path_output.c_str(), stat_buf_input.st_mode);
+//    if (chmod_flag == -1) {
+//        return -2;
+//    }
+//
+//    struct timeval time_input{stat_buf_input.st_atimespec.tv_sec,
+//            static_cast<long>(stat_buf_input.st_atimespec.tv_nsec/1000)};
+//    int utimes_flag = utimes(path_output.c_str(), &time_input);
+//    if (utimes_flag == -1) {
+//        return -3;
+//    }
 
     return 0;
 }
