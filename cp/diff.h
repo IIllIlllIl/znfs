@@ -1,5 +1,11 @@
+// diff
 //
 // Created by Phoenix Wang on 2021/9/20.
+//
+// This class compare 2 certain files, then reports difference
+// Example:
+// diff df("../test/text","../test/cp_text");
+// df.dif();
 //
 
 #ifndef ZNFS_DIFF_H
@@ -25,6 +31,14 @@ class diff {
 public:
     diff(const char * path1, const char * path2);
 
+    // compare two files,
+    // if fails to open file 1, return -1;
+    // if fails to open file 2, return -2;
+    // if fails to read file 1, return -3;
+    // if fails to read file 2, return -4;
+    // if fails to close files, return -5;
+    // if they are the same, return 0;
+    // if they are different, return 1.
     int dif();
 };
 

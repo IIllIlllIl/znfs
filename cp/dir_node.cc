@@ -208,11 +208,6 @@ int dir_node::diff_tree() {
         struct dir_node* new_node = new dir_node(new_root_input.c_str(), new_root_output.c_str());
         new_node->diff_tree();
         children.push_back(new_node);
-
-        int write_flag = this_node->write_stat();
-        if (write_flag < 0) {
-            return -3;
-        }
     }
 
     std::vector<std::string> names2;
@@ -250,11 +245,6 @@ int dir_node::diff_tree() {
         }
         new_node->diff_tree();
         children.push_back(new_node);
-
-        int write_flag = this_node->write_stat();
-        if (write_flag < 0) {
-            return -3;
-        }
     }
 
     return 0;

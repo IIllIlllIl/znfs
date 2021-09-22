@@ -32,6 +32,10 @@ public:
     // if success, return 0.
     int copy();
 
+    // compares 2 dir,
+    // if cannot open dir 1, return -1;
+    // if cannot open dir 2, return -2;
+    // if success, prints results and return 0.
     int diff_tree();
 
 private:

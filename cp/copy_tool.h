@@ -49,6 +49,7 @@ public:
     // if the stat is 'p', return 2.
     int check_stat();
 
+private:
     // copy context of a file,
     // if the file is not found, return -1;
     // if failed to create a new file, return -2;
@@ -67,6 +68,7 @@ public:
 
     // write stat into the created file by utimes(),
     // error same with write_stat();
+    // not finished
     int stat();
 };
 
