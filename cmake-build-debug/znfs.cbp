@@ -99,6 +99,18 @@
 		<Unit filename="/Users/usr/src/4上/se/znfs/main.cpp">
 			<Option target="znfs"/>
 		</Unit>
+		<Unit filename="/Users/usr/src/4上/se/znfs/simple_tar.cc">
+			<Option target="znfs"/>
+		</Unit>
+		<Unit filename="/Users/usr/src/4上/se/znfs/simple_tar.h">
+			<Option target="znfs"/>
+		</Unit>
+		<Unit filename="/Users/usr/src/4上/se/znfs/tar/tar.cpp">
+			<Option target="znfs"/>
+		</Unit>
+		<Unit filename="/Users/usr/src/4上/se/znfs/tar/tar.h">
+			<Option target="znfs"/>
+		</Unit>
 		<Unit filename="/Users/usr/src/4上/se/znfs/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

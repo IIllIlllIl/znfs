@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/usr/src/4上/se/znfs/cp/copy_tool.cc
+copy_tool.h
+/Users/usr/src/4上/se/znfs/cp/copy_tool.h
+
 /Users/usr/src/4上/se/znfs/cp/copy_tool.h
 iostream
 -
@@ -17,9 +21,9 @@ sys/types.h
 -
 sys/stat.h
 -
-utime.h
+sys/time.h
 -
-ctime
+utime.h
 -
 string
 -
@@ -44,6 +48,10 @@ string
 cstring
 -
 
+/Users/usr/src/4上/se/znfs/cp/dir_node.cc
+dir_node.h
+/Users/usr/src/4上/se/znfs/cp/dir_node.h
+
 /Users/usr/src/4上/se/znfs/cp/dir_node.h
 copy_tool.h
 /Users/usr/src/4上/se/znfs/cp/copy_tool.h
@@ -55,6 +63,14 @@ vector
 -
 
 /Users/usr/src/4上/se/znfs/main.cpp
+simple_tar.h
+/Users/usr/src/4上/se/znfs/simple_tar.h
+
+/Users/usr/src/4上/se/znfs/simple_tar.cc
+simple_tar.h
+/Users/usr/src/4上/se/znfs/simple_tar.h
+
+/Users/usr/src/4上/se/znfs/simple_tar.h
 iostream
 -
 string
@@ -65,4 +81,46 @@ string
 /Users/usr/src/4上/se/znfs/cp/dir_node.h
 ./cp/diff.h
 /Users/usr/src/4上/se/znfs/cp/diff.h
+tar/tar.h
+/Users/usr/src/4上/se/znfs/tar/tar.h
+
+/Users/usr/src/4上/se/znfs/tar/tar.cpp
+tar.h
+/Users/usr/src/4上/se/znfs/tar/tar.h
+string
+-
+
+/Users/usr/src/4上/se/znfs/tar/tar.h
+errno.h
+-
+stdarg.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+time.h
+-
+dirent.h
+-
+fcntl.h
+-
+grp.h
+-
+pwd.h
+-
+sys/sysmacros.h
+-
+sys/select.h
+-
+sys/stat.h
+-
+sys/time.h
+-
+sys/types.h
+-
+unistd.h
+-
 

@@ -250,6 +250,60 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+simple_tar.o: simple_tar.cc.o
+
+.PHONY : simple_tar.o
+
+# target to build an object file
+simple_tar.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/simple_tar.cc.o
+.PHONY : simple_tar.cc.o
+
+simple_tar.i: simple_tar.cc.i
+
+.PHONY : simple_tar.i
+
+# target to preprocess a source file
+simple_tar.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/simple_tar.cc.i
+.PHONY : simple_tar.cc.i
+
+simple_tar.s: simple_tar.cc.s
+
+.PHONY : simple_tar.s
+
+# target to generate assembly for a file
+simple_tar.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/simple_tar.cc.s
+.PHONY : simple_tar.cc.s
+
+tar/tar.o: tar/tar.cpp.o
+
+.PHONY : tar/tar.o
+
+# target to build an object file
+tar/tar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/tar/tar.cpp.o
+.PHONY : tar/tar.cpp.o
+
+tar/tar.i: tar/tar.cpp.i
+
+.PHONY : tar/tar.i
+
+# target to preprocess a source file
+tar/tar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/tar/tar.cpp.i
+.PHONY : tar/tar.cpp.i
+
+tar/tar.s: tar/tar.cpp.s
+
+.PHONY : tar/tar.s
+
+# target to generate assembly for a file
+tar/tar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/znfs.dir/build.make CMakeFiles/znfs.dir/tar/tar.cpp.s
+.PHONY : tar/tar.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -271,6 +325,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... simple_tar.o"
+	@echo "... simple_tar.i"
+	@echo "... simple_tar.s"
+	@echo "... tar/tar.o"
+	@echo "... tar/tar.i"
+	@echo "... tar/tar.s"
 .PHONY : help
 
 

@@ -16,4 +16,16 @@ CMakeFiles/znfs.dir/main.cpp.o: ../cp/copy_tool.h
 CMakeFiles/znfs.dir/main.cpp.o: ../cp/diff.h
 CMakeFiles/znfs.dir/main.cpp.o: ../cp/dir_node.h
 CMakeFiles/znfs.dir/main.cpp.o: ../main.cpp
+CMakeFiles/znfs.dir/main.cpp.o: ../simple_tar.h
+CMakeFiles/znfs.dir/main.cpp.o: ../tar/tar.h
+
+CMakeFiles/znfs.dir/simple_tar.cc.o: ../cp/copy_tool.h
+CMakeFiles/znfs.dir/simple_tar.cc.o: ../cp/diff.h
+CMakeFiles/znfs.dir/simple_tar.cc.o: ../cp/dir_node.h
+CMakeFiles/znfs.dir/simple_tar.cc.o: ../simple_tar.cc
+CMakeFiles/znfs.dir/simple_tar.cc.o: ../simple_tar.h
+CMakeFiles/znfs.dir/simple_tar.cc.o: ../tar/tar.h
+
+CMakeFiles/znfs.dir/tar/tar.cpp.o: ../tar/tar.cpp
+CMakeFiles/znfs.dir/tar/tar.cpp.o: ../tar/tar.h
 

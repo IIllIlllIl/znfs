@@ -8,6 +8,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/usr/src/4上/se/znfs/cp/diff.cc" "/Users/usr/src/4上/se/znfs/cmake-build-debug/CMakeFiles/znfs.dir/cp/diff.cc.o"
   "/Users/usr/src/4上/se/znfs/cp/dir_node.cc" "/Users/usr/src/4上/se/znfs/cmake-build-debug/CMakeFiles/znfs.dir/cp/dir_node.cc.o"
   "/Users/usr/src/4上/se/znfs/main.cpp" "/Users/usr/src/4上/se/znfs/cmake-build-debug/CMakeFiles/znfs.dir/main.cpp.o"
+  "/Users/usr/src/4上/se/znfs/simple_tar.cc" "/Users/usr/src/4上/se/znfs/cmake-build-debug/CMakeFiles/znfs.dir/simple_tar.cc.o"
+  "/Users/usr/src/4上/se/znfs/tar/tar.cpp" "/Users/usr/src/4上/se/znfs/cmake-build-debug/CMakeFiles/znfs.dir/tar/tar.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
