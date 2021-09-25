@@ -16,8 +16,8 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/time.h>
 #include <utime.h>
-#include <ctime>
 #include <string>
 
 class copy_tool {
@@ -49,7 +49,6 @@ public:
     // if the stat is 'p', return 2.
     int check_stat();
 
-private:
     // copy context of a file,
     // if the file is not found, return -1;
     // if failed to create a new file, return -2;
@@ -70,6 +69,9 @@ private:
     // error same with write_stat();
     // not finished
     int stat();
+    int stat_chown(const char* path, uid_t uid, gid_t gid);
+    int stat_chmod(const char* path, mode_t mode);
+    int stat_mtime(const char* path, time_t mtime);
 };
 
 

@@ -149,33 +149,40 @@ int dir_node::stat_tree() {
     return 0;
 }
 
-int dir_node::diff_tree() {
+std::string dir_node::diff_tree() {
+    int re;
+    std::string output = "";
     if (type == 2) {
-        return 0;
+        re = 0;
+        return output;
     }
 
     if(type != -3) {
         int ret = this_df->dif();
+        re = 0;
         if (ret == -1) {
-            std::cout<<"Only exist "<<root_output<<std::endl;
+            output += "Only exist " + root_output + "\n";
         }
         if (ret == -2) {
-            std::cout<<"Only exist "<<root_input<<std::endl;
+            output += "Only exist " + root_input + "\n";
         }
         if (ret == 1) {
-            std::cout<<"Having difference: "<<root_input <<" "<<root_output<<std::endl;
+            output += "Having difference: " + root_input  + " " + root_output + "\n";
         }
-        return 0;
+        re = 0;
+        return output;
     }
 
     DIR* open_flag1 = opendir(root_input.c_str());
     DIR* open_flag2 = opendir(root_output.c_str());
     if (open_flag1 == NULL) {
-        return -1;
+        re = -1;
+        return output;
     }
 
     if (open_flag2 == NULL) {
-        return -2;
+        re = -2;
+        return output;
     }
 
     std::vector<std::string> names1;
@@ -206,7 +213,7 @@ int dir_node::diff_tree() {
         }
 
         struct dir_node* new_node = new dir_node(new_root_input.c_str(), new_root_output.c_str());
-        new_node->diff_tree();
+        output += new_node->diff_tree();
         children.push_back(new_node);
     }
 
@@ -243,11 +250,12 @@ int dir_node::diff_tree() {
                 continue;
             }
         }
-        new_node->diff_tree();
+        output += new_node->diff_tree();
         children.push_back(new_node);
     }
 
-    return 0;
+    re = 0;
+    return output;
 }
 
 int dir_node::copy() {

@@ -36,7 +36,7 @@ public:
     // if cannot open dir 1, return -1;
     // if cannot open dir 2, return -2;
     // if success, prints results and return 0.
-    int diff_tree();
+    std::string diff_tree();
 
 private:
     // build the tree of chosen dir，

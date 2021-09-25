@@ -2,7 +2,6 @@
 // Created by Phoenix Wang on 2021/9/11.
 //
 
-#include <sys/time.h>
 #include "copy_tool.h"
 
 copy_tool::copy_tool(const char * open_path, const char * create_path){
@@ -72,37 +71,78 @@ int copy_tool::write_stat() {
         return -2;
     }
 
-    struct utimbuf time_input{stat_buf_input.st_atime, stat_buf_input.st_mtime};
-    int utime_flag = utime(path_output.c_str(), &time_input);
+    struct timeval time_input[2];
+    TIMESPEC_TO_TIMEVAL(&time_input[0],&stat_buf_input.st_atimespec);
+    TIMESPEC_TO_TIMEVAL(&time_input[1],&stat_buf_input.st_mtimespec);
+
+    int utime_flag = lutimes(path_output.c_str(), time_input);
     if (utime_flag == -1) {
         return -3;
     }
 
     return 0;
 }
-
-int copy_tool::stat() {
-//    int chown_flag = chown(path_output.c_str(),
+//
+//int copy_tool::stat() {
+//    int chown_flag = stat_chown(path_output.c_str(),
 //                           stat_buf_input.st_uid,
 //                           stat_buf_input.st_gid);
+//    if (chown_flag < 0) {
+//        return chown_flag;
+//    }
+//
+//    int chmod_flag = stat_chmod(path_output.c_str(), stat_buf_input.st_mode);
+//    if (chmod_flag < 0) {
+//        return chmod_flag;
+//    }
+//
+//
+//    int utime_flag = stat_mtime(path_output.c_str(), stat_buf_input.st_mtime);
+//    if (utime_flag < 0) {
+//        return utime_flag;
+//    }
+//
+//    return 0;
+//}
+//
+//int copy_tool::stat_chown(const char* path, uid_t uid, gid_t gid) {
+//    int chown_flag = chown(path, uid, gid);
+//
 //    if (chown_flag == -1) {
 //        return -1;
 //    }
 //
-//    int chmod_flag = chmod(path_output.c_str(), stat_buf_input.st_mode);
+//    return 0;
+//}
+//
+//int copy_tool::stat_chmod(const char* path, mode_t mode) {
+//    int chmod_flag = chmod(path, mode);
+//
 //    if (chmod_flag == -1) {
 //        return -2;
 //    }
 //
-//    struct timeval time_input{stat_buf_input.st_atimespec.tv_sec,
-//            static_cast<long>(stat_buf_input.st_atimespec.tv_nsec/1000)};
-//    int utimes_flag = utimes(path_output.c_str(), &time_input);
-//    if (utimes_flag == -1) {
+//    return 0;
+//}
+//
+//int copy_tool::stat_mtime(const char* path, time_t mtime) {
+//    struct stat stat_buf;
+//    int stat_flag = lstat(path, &stat_buf);
+//    if (stat_flag == -1) {
+//        return -4;
+//    }
+//
+//    struct timeval time_input[2];
+//    TIMESPEC_TO_TIMEVAL(&time_input[0],&stat_buf.st_atime);
+//    TIMESPEC_TO_TIMEVAL(&time_input[1],&mtime);
+//
+//    int utime_flag = lutimes(path, time_input);
+//    if (utime_flag == -1) {
 //        return -3;
 //    }
-
-    return 0;
-}
+//
+//    return 0;
+//}
 
 int copy_tool::copy() {
     int check = check_stat();
