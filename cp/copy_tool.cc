@@ -72,8 +72,8 @@ int copy_tool::write_stat() {
     }
 
     struct timeval time_input[2];
-    TIMESPEC_TO_TIMEVAL(&time_input[0],&stat_buf_input.st_atimespec);
-    TIMESPEC_TO_TIMEVAL(&time_input[1],&stat_buf_input.st_mtimespec);
+    TIMESPEC_TO_TIMEVAL(&time_input[0],&stat_buf_input.st_atim);
+    TIMESPEC_TO_TIMEVAL(&time_input[1],&stat_buf_input.st_mtim);
 
     int utime_flag = lutimes(path_output.c_str(), time_input);
     if (utime_flag == -1) {

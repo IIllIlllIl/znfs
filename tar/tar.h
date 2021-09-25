@@ -175,4 +175,6 @@ int write_end_data(const int fd, int size, const char verbosity);
 int check_match(struct tar_t * entry, const size_t filecount, const char * files[]);
 // /////////////////////////////////////////////////////////////////////////////
 
+int write_stat(int fd, struct tar_t* entry);
+
 #endif

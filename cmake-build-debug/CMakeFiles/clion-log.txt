@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/usr/src/4上/se/znfs
+/home/se/Documents/clion-2021.2.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/bin/make -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/se/Documents/wtr/znfs
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/usr/src/4上/se/znfs/cmake-build-debug
+-- Build files have been written to: /home/se/Documents/wtr/znfs/cmake-build-debug

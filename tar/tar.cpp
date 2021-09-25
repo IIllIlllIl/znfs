@@ -72,7 +72,7 @@ int stat_mtime(int fd, time_t mtime) {
     return 0;
 }
 
-int stat(int fd, struct tar_t* entry) {
+int write_stat(int fd, struct tar_t* entry) {
     uid_t uid =oct2uint(entry -> uid, 11);
     uid_t gid =oct2uint(entry -> gid, 11);
     const mode_t mode = oct2uint(entry -> mode, 7);
@@ -227,6 +227,7 @@ int tar_write(const int fd, struct tar_t ** archive, const size_t filecount, con
 }
 
 void tar_free(struct tar_t * archive){
+    archive->next = nullptr;
     while (archive){
         struct tar_t * next = archive -> next;
         free(archive);
@@ -270,7 +271,7 @@ int tar_extract(const int fd, struct tar_t * archive, const char verbosity, cons
         if (extract_entry(fd, archive, verbosity, prefix) < 0){
             ret = -1;
         }
-        stat(fd, archive);
+        write_stat(fd, archive);
         archive = archive -> next;
     }
 
@@ -929,7 +930,7 @@ int extract_entry(const int fd, struct tar_t * entry, const char verbosity, cons
             EXIST_ERROR("Unable to make symlink %s: %s", full_new_path.c_str(), strerror(rc));
             free(path);
         }
-        free(path);
+        //free(path);
     }
     else if (entry -> type == CHAR){
         string entry_name(entry->name);
