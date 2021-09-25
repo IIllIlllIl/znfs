@@ -10,13 +10,19 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include "./cp/copy_tool.h"
 #include "./cp/dir_node.h"
 #include "./cp/diff.h"
 #include "tar/tar.h"
+#include "compress/compress.h"
+#include "compress/decompress.h"
 
 class simple_tar {
 public:
+    int package(std::string file_path, std::string package_path);
+    int unpackage(std::string package_path, std::string target_path);
+
     int tar(std::string file_path, std::string package_name);
     int untar(std::string file_path, std::string package_name);
 

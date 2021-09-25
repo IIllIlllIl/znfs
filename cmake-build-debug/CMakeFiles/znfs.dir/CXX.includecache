@@ -6,6 +6,34 @@
 
 #IncludeRegexTransform: 
 
+/home/se/Documents/wtr/znfs/compress/compress.h
+huffmanTree.h
+/home/se/Documents/wtr/znfs/compress/huffmanTree.h
+fstream
+-
+
+/home/se/Documents/wtr/znfs/compress/decompress.h
+huffmanTree.h
+/home/se/Documents/wtr/znfs/compress/huffmanTree.h
+compress.h
+/home/se/Documents/wtr/znfs/compress/compress.h
+fstream
+/home/se/Documents/wtr/znfs/compress/fstream
+
+/home/se/Documents/wtr/znfs/compress/huffmanTree.h
+cstdio
+-
+cstdlib
+-
+iostream
+-
+queue
+-
+map
+-
+string
+-
+
 /home/se/Documents/wtr/znfs/cp/copy_tool.h
 iostream
 -
@@ -58,14 +86,12 @@ vector
 simple_tar.h
 /home/se/Documents/wtr/znfs/simple_tar.h
 
-/home/se/Documents/wtr/znfs/simple_tar.cc
-simple_tar.h
-/home/se/Documents/wtr/znfs/simple_tar.h
-
 /home/se/Documents/wtr/znfs/simple_tar.h
 iostream
 -
 string
+-
+vector
 -
 ./cp/copy_tool.h
 /home/se/Documents/wtr/znfs/cp/copy_tool.h
@@ -75,12 +101,10 @@ string
 /home/se/Documents/wtr/znfs/cp/diff.h
 tar/tar.h
 /home/se/Documents/wtr/znfs/tar/tar.h
-
-/home/se/Documents/wtr/znfs/tar/tar.cpp
-tar.h
-/home/se/Documents/wtr/znfs/tar/tar.h
-string
--
+compress/compress.h
+/home/se/Documents/wtr/znfs/compress/compress.h
+compress/decompress.h
+/home/se/Documents/wtr/znfs/compress/decompress.h
 
 /home/se/Documents/wtr/znfs/tar/tar.h
 errno.h

@@ -13,6 +13,9 @@ CMakeFiles/znfs.dir/cp/dir_node.cc.o
  /home/se/Documents/wtr/znfs/cp/dir_node.cc
  /home/se/Documents/wtr/znfs/cp/dir_node.h
 CMakeFiles/znfs.dir/main.cpp.o
+ /home/se/Documents/wtr/znfs/compress/compress.h
+ /home/se/Documents/wtr/znfs/compress/decompress.h
+ /home/se/Documents/wtr/znfs/compress/huffmanTree.h
  /home/se/Documents/wtr/znfs/cp/copy_tool.h
  /home/se/Documents/wtr/znfs/cp/diff.h
  /home/se/Documents/wtr/znfs/cp/dir_node.h
@@ -20,6 +23,9 @@ CMakeFiles/znfs.dir/main.cpp.o
  /home/se/Documents/wtr/znfs/simple_tar.h
  /home/se/Documents/wtr/znfs/tar/tar.h
 CMakeFiles/znfs.dir/simple_tar.cc.o
+ /home/se/Documents/wtr/znfs/compress/compress.h
+ /home/se/Documents/wtr/znfs/compress/decompress.h
+ /home/se/Documents/wtr/znfs/compress/huffmanTree.h
  /home/se/Documents/wtr/znfs/cp/copy_tool.h
  /home/se/Documents/wtr/znfs/cp/diff.h
  /home/se/Documents/wtr/znfs/cp/dir_node.h

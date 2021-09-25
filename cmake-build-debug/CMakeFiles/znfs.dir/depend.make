@@ -13,6 +13,9 @@ CMakeFiles/znfs.dir/cp/dir_node.cc.o: \
  ../cp/dir_node.cc \
  ../cp/dir_node.h
 CMakeFiles/znfs.dir/main.cpp.o: \
+ ../compress/compress.h \
+ ../compress/decompress.h \
+ ../compress/huffmanTree.h \
  ../cp/copy_tool.h \
  ../cp/diff.h \
  ../cp/dir_node.h \
@@ -20,6 +23,9 @@ CMakeFiles/znfs.dir/main.cpp.o: \
  ../simple_tar.h \
  ../tar/tar.h
 CMakeFiles/znfs.dir/simple_tar.cc.o: \
+ ../compress/compress.h \
+ ../compress/decompress.h \
+ ../compress/huffmanTree.h \
  ../cp/copy_tool.h \
  ../cp/diff.h \
  ../cp/dir_node.h \

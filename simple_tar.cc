@@ -7,6 +7,26 @@
 
 #define MAX(x, y) (((x) > (y)) ? (x) : (y))
 
+std::vector<std::string> split(const std::string &str, const std::string &delim) {
+    std::vector<std::string> result;
+    if (str == "") {
+        return result;
+    }
+    char* strs = new char[str.length() + 1];
+    strcpy(strs, str.c_str());
+
+    char* d = new char[delim.length() + 1];
+    strcpy(d, delim.c_str());
+
+    char* p = strtok(strs, d);
+    while(p) {
+        std::string s = p;
+        result.push_back(s);
+        p = strtok(NULL, d);
+    }
+
+    return result;
+}
 
 int simple_tar::toTar(const char * filename, const char ** files, int move) {
     char verbosity = 0;
@@ -85,4 +105,81 @@ int simple_tar::untar(std::string file_path, std::string package_name) {
     rc = toExtract(filename, extract_tgt_dir);
 
     return rc;
+}
+
+int simple_tar::package(std::string file_path, std::string package_path) {
+    if (file_path.at(file_path.length() - 1) == '/') {
+        file_path = file_path.substr(0, file_path.length() - 1);
+    }
+    if (package_path.at(package_path.length() - 1) != '/') {
+        package_path += '/';
+    }
+    std::vector<std::string> paths = split(file_path, "/");
+    std::string full_name = paths[paths.size() - 1];
+    std::string name = split(full_name, ".")[0];
+
+    // ?/xxx.xx -> ./xxx.tt
+    int tar_flag = tar(file_path, "./" + name + ".tt");
+    if (tar_flag < 0) {
+        return -tar_flag;
+    }
+
+    huffmanEncode hfEncode; // huffman压缩类
+    // huffman压缩函数： 参数1-要压缩的文件，参数2-压缩生成的文件
+    // ./xxx.tt -> ./xxx.cps
+    bool encode_flag = hfEncode.encode(("./" + name + ".tt").c_str(),
+                                       ("./" + name + ".cps").c_str());
+    if (encode_flag == false) {
+        return 101;
+    }
+
+    // ./xxx.cps -> ?/xxx.pkg
+    copy_tool cp(("./" + name + ".cps").c_str(),
+                 (package_path + name + ".pkg").c_str());
+    int cp_flag = cp.copy();
+    if (cp_flag < 0) {
+        return 200 + cp_flag;
+    }
+
+    return 0;
+}
+
+int simple_tar::unpackage(std::string package_path, std::string target_path) {
+    if (package_path.at(package_path.length() - 1) == '/') {
+        package_path = package_path.substr(0, package_path.length() - 1);
+    }
+    if (target_path.at(target_path.length() - 1) != '/') {
+        target_path += '/';
+    }
+
+    std::vector<std::string> paths = split(package_path, "/");
+    std::string full_name = paths[paths.size() - 1];
+    std::vector<std::string> name_vec = split(full_name, ".");
+    if (name_vec.size() < 0){
+        return 102;
+    }
+    std::string name = name_vec[0];
+    std::string type = name_vec[name_vec.size() - 1];
+
+    // ?/xxx.pkg -> ./xxx.cps
+    if (type == "pkg") {
+        copy_tool cp(package_path.c_str(), ("./" + name + ".cps").c_str());
+    }
+
+    huffmanDecode hfDecode; // huffman解压缩类
+    // huffman解压缩函数： 参数1-要解压缩的文件，参数2-解压缩还原的文件
+    // ./xxx.cps -> ./xxx.tt
+    bool decode_flag = hfDecode.decode(("./" + name + ".cps").c_str(),
+                                       ("./" + name + ".tt").c_str());
+    if (decode_flag == false) {
+        return 101;
+    }
+
+    // ./xxx.tt -> ?/xxx.xx
+    int untar_flag = untar(target_path, "./" + name + ".tt");
+    if (untar_flag < 0) {
+        return - untar_flag;
+    }
+
+    return 0;
 }
