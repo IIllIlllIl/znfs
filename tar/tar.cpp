@@ -31,8 +31,21 @@ static int recursive_mkdir(const char * dir, const unsigned int mode, const char
 
 
 // added codes
+
+std::vector<struct dir_chain> dir_vec;
+
 int stat_chown(int fd, uid_t uid, gid_t gid) {
     int chown_flag = fchown(fd, uid, gid);
+
+    if (chown_flag == -1) {
+        return -1;
+    }
+
+    return 0;
+}
+
+int stat_chown(const char* path, uid_t uid, gid_t gid) {
+    int chown_flag = chown(path, uid, gid);
 
     if (chown_flag == -1) {
         return -1;
@@ -51,6 +64,16 @@ int stat_chmod(int fd, mode_t mode) {
     return 0;
 }
 
+int stat_chmod(const char* path, mode_t mode) {
+    int chmod_flag = chmod(path, mode);
+
+    if (chmod_flag == -1) {
+        return -2;
+    }
+
+    return 0;
+}
+
 int stat_mtime(int fd, time_t mtime) {
     struct stat stat_buf;
     int stat_flag = fstat(fd, &stat_buf);
@@ -59,8 +82,7 @@ int stat_mtime(int fd, time_t mtime) {
     }
 
     struct timeval time_input[2];
-    time_input[0].tv_sec = stat_buf.st_atime;
-    time_input[0].tv_usec = 0;
+    TIMESPEC_TO_TIMEVAL(&time_input[0],&stat_buf.st_atim);
     time_input[1].tv_sec = mtime;
     time_input[1].tv_usec = 0;
 
@@ -72,26 +94,83 @@ int stat_mtime(int fd, time_t mtime) {
     return 0;
 }
 
-int write_stat(int fd, struct tar_t* entry) {
+int stat_mtime(const char* path, time_t mtime) {
+    struct stat stat_buf;
+    int stat_flag = lstat(path, &stat_buf);
+    if (stat_flag == -1) {
+        return -4;
+    }
+
+    struct timeval time_input[2];
+    TIMESPEC_TO_TIMEVAL(&time_input[0],&stat_buf.st_atim);
+    time_input[1].tv_sec = mtime;
+    time_input[1].tv_usec = 0;
+
+    int utime_flag = lutimes(path, time_input);
+    if (utime_flag == -1) {
+        return -3;
+    }
+
+    return 0;
+}
+
+int write_stat(const char* path, struct tar_t* entry) {
     uid_t uid =oct2uint(entry -> uid, 11);
     uid_t gid =oct2uint(entry -> gid, 11);
     const mode_t mode = oct2uint(entry -> mode, 7);
     time_t mtime = oct2uint(entry -> mtime, 11);
 
-    int chown_flag = stat_chown(fd, uid, gid);
+    int rc = 0;
+
+    int chown_flag = stat_chown(path, uid, gid);
     if (chown_flag < 0) {
-        return chown_flag;
+        rc =  chown_flag;
     }
 
-    int chmod_flag = stat_chmod(fd, mode);
+    int chmod_flag = stat_chmod(path, mode);
     if (chmod_flag < 0) {
-        return chmod_flag;
+        rc =  chmod_flag;
     }
 
 
-    int utime_flag = stat_mtime(fd, mtime);
+    int utime_flag = stat_mtime(path, mtime);
     if (utime_flag < 0) {
-        return utime_flag;
+        rc =  utime_flag;
+    }
+
+    return rc;
+}
+
+int write_stat(struct dir_chain* dc) {
+    uid_t uid =oct2uint(dc->entry -> uid, 11);
+    uid_t gid =oct2uint(dc->entry -> gid, 11);
+    const mode_t mode = oct2uint(dc->entry -> mode, 7);
+    time_t mtime = oct2uint(dc->entry -> mtime, 11);
+
+    int rc = 0;
+
+    int chown_flag = stat_chown(dc->path.c_str(), uid, gid);
+    if (chown_flag < 0) {
+        rc =  chown_flag;
+    }
+
+    int chmod_flag = stat_chmod(dc->path.c_str(), mode);
+    if (chmod_flag < 0) {
+        rc =  chmod_flag;
+    }
+
+
+    int utime_flag = stat_mtime(dc->path.c_str(), mtime);
+    if (utime_flag < 0) {
+        rc =  utime_flag;
+    }
+
+    return rc;
+}
+
+int write_stack() {
+    for(int i = dir_vec.size() - 1; i >= 0; --i) {
+        write_stat(&dir_vec[i]);
     }
 
     return 0;
@@ -271,9 +350,10 @@ int tar_extract(const int fd, struct tar_t * archive, const char verbosity, cons
         if (extract_entry(fd, archive, verbosity, prefix) < 0){
             ret = -1;
         }
-        write_stat(fd, archive);
         archive = archive -> next;
     }
+
+    write_stack();
 
     return ret;
 }
@@ -857,6 +937,9 @@ int extract_entry(const int fd, struct tar_t * entry, const char verbosity, cons
             got += r;
         }
 
+        // *** added codes
+        write_stat(entry_path.c_str(), entry);
+
         close(f);
     }
 
@@ -898,6 +981,10 @@ int extract_entry(const int fd, struct tar_t * entry, const char verbosity, cons
             EXIST_ERROR("Unable to create hardlink %s: %s", full_new_path.c_str(), strerror(rc));
             free(path);
         }
+
+        // *** added codes
+        write_stat(full_new_path.c_str(), entry);
+
         free(path);
     }
 
@@ -930,6 +1017,9 @@ int extract_entry(const int fd, struct tar_t * entry, const char verbosity, cons
             EXIST_ERROR("Unable to make symlink %s: %s", full_new_path.c_str(), strerror(rc));
             free(path);
         }
+        // *** added codes
+        write_stat(full_new_path.c_str(), entry);
+
         //free(path);
     }
     else if (entry -> type == CHAR){
@@ -959,6 +1049,10 @@ int extract_entry(const int fd, struct tar_t * entry, const char verbosity, cons
         if (recursive_mkdir(full_path.c_str(), oct2uint(entry -> mode, 7) & 0777, verbosity) < 0){
             EXIST_ERROR("Unable to create directory %s: %s", entry -> name, strerror(rc));
         }
+
+        // *** added codes
+        struct dir_chain dc{full_path, entry};
+        dir_vec.push_back(dc);
     }
     else if (entry -> type == FIFO){
         string entry_name(entry->name);
@@ -967,7 +1061,11 @@ int extract_entry(const int fd, struct tar_t * entry, const char verbosity, cons
         if (mkfifo(full_path.c_str(), oct2uint(entry -> mode, 7) & 0777) < 0){
             EXIST_ERROR("Unable to make pipe %s: %s", entry -> name, strerror(rc));
         }
+
+        // *** added codes
+        write_stat(full_path.c_str(), entry);
     }
+
     return 0;
 }
 

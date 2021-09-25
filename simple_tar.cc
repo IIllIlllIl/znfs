@@ -50,8 +50,6 @@ int simple_tar::toExtract(const char * filename, const char * extract_tgt_dir) {
     if (tar_extract(fd, archive, verbosity, extract_tgt_dir) < 0)
         rc = -1;
 
-    write_stat(fd, archive);
-
     return rc;
 }
 

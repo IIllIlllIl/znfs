@@ -35,6 +35,9 @@ THE SOFTWARE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <string>
+#include <stack>
+#include <vector>
 #include <time.h>
 
 #include <dirent.h>
@@ -175,6 +178,14 @@ int write_end_data(const int fd, int size, const char verbosity);
 int check_match(struct tar_t * entry, const size_t filecount, const char * files[]);
 // /////////////////////////////////////////////////////////////////////////////
 
+struct dir_chain {
+    std::string path;
+    tar_t* entry;
+};
+
 int write_stat(int fd, struct tar_t* entry);
+int write_stat(const char* path, struct tar_t* entry);
+int write_stat(struct dir_chain* dc);
+int write_stack();
 
 #endif

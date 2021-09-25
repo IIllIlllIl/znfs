@@ -15,8 +15,8 @@ int main() {
     simple_tar st;
 
     //cout<<dn.copy()<<endl;
-    st.tar("../test/dir/", name);
-    st.untar("../test/cp_dir/",name);
+    st.tar("../test/d/", name);
+    st.untar("../test/cp_d",name);
 
     return 0;
 }
