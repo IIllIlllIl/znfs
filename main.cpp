@@ -12,20 +12,20 @@ int main() {
     char pass[]="456";
     char opera[]="update";
     char src[] = "../test/dir";
-    char dest[] = "../test/dir4";
+    char dest[] = "";
 
     //下载
 //    char pass[]="456";
 //    char opera[]="download";
 //    char src[] = "dir.pkg";
-//    char dest[] = "../test/dir5";
+//    char dest[] = "../test/dir7";
 
     //展示服务器端的文件
 //    char pass[]="456";
 //    char opera[]="show";
-//    char src[] = "dir.pkg";
-//    char dest[] = "../test/dir5";
-//
+//    char src[] = "";
+//    char dest[] = "";
+
     int success=client(pass,opera,src,dest);
 
 
