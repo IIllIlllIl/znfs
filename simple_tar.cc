@@ -164,6 +164,10 @@ int simple_tar::unpackage(std::string package_path, std::string target_path) {
     // ?/xxx.pkg -> ./xxx.cps
     if (type == "pkg") {
         copy_tool cp(package_path.c_str(), ("./" + name + ".cps").c_str());
+        int cp_flag = cp.copy();
+        if (cp_flag < 0) {
+            return 200 + cp_flag;
+        }
     }
 
     huffmanDecode hfDecode; // huffman解压缩类
