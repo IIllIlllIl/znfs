@@ -20,6 +20,8 @@ CMakeFiles/znfs.dir/main.cpp.o: \
  ../cp/diff.h \
  ../cp/dir_node.h \
  ../main.cpp \
+ ../net/client.h \
+ ../net/net.h \
  ../simple_tar.h \
  ../tar/tar.h
 CMakeFiles/znfs.dir/simple_tar.cc.o: \

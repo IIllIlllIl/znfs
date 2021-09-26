@@ -114,6 +114,12 @@
 		<Unit filename="/home/se/Documents/wtr/znfs/main.cpp">
 			<Option target="znfs"/>
 		</Unit>
+		<Unit filename="/home/se/Documents/wtr/znfs/net/client.h">
+			<Option target="znfs"/>
+		</Unit>
+		<Unit filename="/home/se/Documents/wtr/znfs/net/net.h">
+			<Option target="znfs"/>
+		</Unit>
 		<Unit filename="/home/se/Documents/wtr/znfs/simple_tar.cc">
 			<Option target="znfs"/>
 		</Unit>

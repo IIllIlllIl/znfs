@@ -8,4 +8,5 @@ add_executable(
         cp/copy_tool.cc cp/copy_tool.h cp/dir_node.cc cp/dir_node.h cp/diff.cc cp/diff.h
         tar/tar.h tar/tar.cpp simple_tar.cc
         compress/compress.h compress/decompress.h compress/huffmanTree.h
+        net/client.h net/net.h
         simple_tar.h)

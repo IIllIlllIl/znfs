@@ -20,6 +20,8 @@ CMakeFiles/znfs.dir/main.cpp.o
  /home/se/Documents/wtr/znfs/cp/diff.h
  /home/se/Documents/wtr/znfs/cp/dir_node.h
  /home/se/Documents/wtr/znfs/main.cpp
+ /home/se/Documents/wtr/znfs/net/client.h
+ /home/se/Documents/wtr/znfs/net/net.h
  /home/se/Documents/wtr/znfs/simple_tar.h
  /home/se/Documents/wtr/znfs/tar/tar.h
 CMakeFiles/znfs.dir/simple_tar.cc.o
